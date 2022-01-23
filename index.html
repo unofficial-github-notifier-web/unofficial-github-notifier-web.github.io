@@ -5,7 +5,12 @@
   </head>
   <body>
     <script>
-
+      var key=prompt("Personal access token with notifications support:")
+      var notificationsReq=fetch("https://api.github.com/notifications",{headers: {authorization: "token ".concat(key)}});
+      notificationsReq.then(async function(res) {
+        var content=await res.text();
+        alert(content);
+      });
     </script>
   </body>
 </html>

@@ -9,7 +9,7 @@
       var notificationsReq=fetch("https://api.github.com/notifications",{headers: {authorization: "token ".concat(key)}});
       notificationsReq.then(async function(res) {
         var content=await res.text();
-        alert(content);
+        alert(JSON.parse(content).length);
       });
     </script>
   </body>
